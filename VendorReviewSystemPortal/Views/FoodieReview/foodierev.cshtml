@@ -1,0 +1,179 @@
+﻿@model VendorReviewSystemPortal.Models.FoodieReview
+
+@{
+    ViewData["Title"] = "foodierev";
+}
+@section head{
+    <style type="text/css">
+    body
+    {
+        
+        background-image:url('/images/signup2.jpg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+        margin:auto;
+        
+        
+        
+    }
+    #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+    
+    </style>
+}
+<h1>Vendors Details</h1>
+<br/>
+
+<div class="container">
+    <table class="table table-bordered table-hover" id="customers">
+        <tr class="bg-primay text-dark">
+            <th>UserID</th>
+          <th>Name</th>
+          <th>EmailID</th>
+          <th>WebsiteID</th>
+          <th>Location</th>
+        </tr>
+        @{
+            try
+            {
+                if(TempData["vendors"]!=null)
+                {
+                    foreach(var x in (List<VendorReviewSystemPortal.Models.Vendor>)TempData["vendors"])
+                    {
+                        <tr>
+                        <td>@x.UserID</td>
+                        <td>@x.Name</td>
+                        <td>@x.EmailID</td>
+                        <td>@x.WebsiteID</td>
+                        <td>@x.Location</td>
+                        
+                        </tr>
+                    }
+                }
+            }
+            catch
+            {
+                
+            }
+        }
+    </table>
+</div>
+
+<br/>
+
+
+<h1>Foodie Review</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="foodierev">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FoodieUserID" class="control-label"></label>
+                <input asp-for="FoodieUserID" class="form-control" />
+                <span asp-validation-for="FoodieUserID" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="FoodieName" class="control-label"></label>
+                <input asp-for="FoodieName" class="form-control" />
+                <span asp-validation-for="FoodieName" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="FoodieMobileNo" class="control-label"></label>
+                <input asp-for="FoodieMobileNo" class="form-control" />
+                <span asp-validation-for="FoodieMobileNo" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="FoodieDateofVisit" class="control-label"></label>
+                <input asp-for="FoodieDateofVisit" class="form-control" />
+                <span asp-validation-for="FoodieDateofVisit" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="FoodieDateofReview" class="control-label"></label>
+                <input asp-for="FoodieDateofReview" class="form-control" />
+                <span asp-validation-for="FoodieDateofReview" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VendorUserID" class="control-label"></label>
+                <input asp-for="VendorUserID" class="form-control" />
+                <span asp-validation-for="VendorUserID" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="VendorName" class="control-label"></label>
+                <input asp-for="VendorName" class="form-control" />
+                <span asp-validation-for="VendorName" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="VendorLocation" class="control-label"></label>
+                <input asp-for="VendorLocation" class="form-control" />
+                <span asp-validation-for="VendorLocation" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="FoodiesReview" class="control-label"></label>
+                <input asp-for="FoodiesReview" class="form-control" />
+                <span asp-validation-for="FoodiesReview" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="FoodieRating" class="control-label"></label>
+                <input asp-for="FoodieRating" class="form-control" />
+                <span asp-validation-for="FoodieRating" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Add Review" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+@{
+    try
+    {
+        if(TempData["foo rev"]=="1")
+        {
+            <script>
+             swal("Good job!", "Review added Sucessfully!", "success");
+           </script>
+        }
+
+    }
+    catch
+    {
+        
+    }
+}

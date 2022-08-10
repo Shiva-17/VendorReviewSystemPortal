@@ -1,0 +1,79 @@
+﻿
+@section head{
+    <style type="text/css">
+    body
+    {
+        
+        background-image:url('/images/signup2.jpg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+        margin:auto;
+        
+        
+        
+    }
+    #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+    
+    </style>
+}
+<h1>Foodie Details</h1>
+<br/>
+<div class="container">
+    <table class="table table-bordered table-hover" id="customers">
+        <tr class="bg-primay text-dark">
+          <th>UserID</th>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>EmailID</th>
+          <th>DOB</th>
+          <th>Age</th>
+          <th>MobileNo</th>
+        </tr>
+        @{
+            try
+            {
+                if(TempData["foo"]!=null)
+                {
+                    foreach(var x in (List<VendorReviewSystemPortal.Models.Foodie>)TempData["foo"])
+                    {
+                        <tr>
+                        <td>@x.UserID</td>
+                        <td>@x.FirstName</td>
+                        <td>@x.LastName</td>
+                        <td>@x.EmailID</td>
+                        <td>@x.DOB</td>
+                        <td>@x.Age</td>
+                        <td>@x.MobileNo</td>
+                        </tr>
+                    }
+                }
+            }
+            catch
+            {
+                
+            }
+        }
+    </table>
+</div>

@@ -1,0 +1,122 @@
+﻿@model VendorReviewSystemPortal.Models.Login
+
+@{
+    ViewData["Title"] = "Login";
+}
+@section head{
+    <style type="text/css">
+    body
+    {
+        
+        background-image:url('/images/new.jpg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+        margin:auto;
+        text-align:center;
+        
+        
+    }
+     
+  
+    </style>
+}
+<h1>Login</h1>
+
+
+<hr />
+
+<div class="row justify-content-lg-center">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserID" class="control-label justify-content-start"></label>
+                <input asp-for="UserID" class="form-control" />
+                <span asp-validation-for="UserID" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<br/>
+<div>
+    <a href="~/Forget/forget">Forget Password ?</a>
+</div>
+<br/>
+<div>
+    <a href="~/Vendor/VenSignup">Vendor Registration</a>
+</div>
+<br/>
+<div>
+    <a href="~/Foodie/FooSignup">Foodie Registration</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+@{
+    try
+    {
+        if(TempData["msg"]=="0")
+        {
+            <script>
+                swal("Incorrect UserID/Password! ", "Please Try Again!", "error");
+            </script>
+        }
+    }
+    catch
+    {
+        
+    }
+}
+
+
+@{
+    try
+    {
+        if(TempData["ven"]=="0")
+        {
+            <script>
+                swal("Incorrect UserID/Password! ", "Please Try Again!", "error");
+            </script>
+        }
+    }
+    catch
+    {
+        
+    }
+}
+
+@{
+    try
+    {
+        if(TempData["foo"]=="0")
+        {
+            <script>
+                swal("Incorrect UserID/Password! ", "Please Try Again!", "error");
+            </script>
+        }
+    }
+    catch
+    {
+        
+    }
+}
+
+
+
+
+

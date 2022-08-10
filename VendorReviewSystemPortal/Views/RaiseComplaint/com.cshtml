@@ -1,0 +1,95 @@
+﻿@model VendorReviewSystemPortal.Models.Complaint
+
+@{
+    ViewData["Title"] = "com";
+}
+@section head{
+    <style type="text/css">
+    body
+    {
+        
+        background-image:url('/images/signup2.jpg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+        margin:auto;
+        
+        
+        
+    }
+    
+    </style>
+}
+
+
+<h4>Raise Complaint</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="com">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VendorUserID" class="control-label"></label>
+                <input asp-for="VendorUserID" class="form-control" />
+                <span asp-validation-for="VendorUserID" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="VendorName" class="control-label"></label>
+                <input asp-for="VendorName" class="form-control" />
+                <span asp-validation-for="VendorName" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="VendorLocation" class="control-label"></label>
+                <input asp-for="VendorLocation" class="form-control" />
+                <span asp-validation-for="VendorLocation" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="FoodieUserID" class="control-label"></label>
+                <input asp-for="FoodieUserID" class="form-control" />
+                <span asp-validation-for="FoodieUserID" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="FoodieName" class="control-label"></label>
+                <input asp-for="FoodieName" class="form-control" />
+                <span asp-validation-for="FoodieName" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="RaiseComplaint" class="control-label"></label>
+                <input asp-for="RaiseComplaint" class="form-control" />
+                <span asp-validation-for="RaiseComplaint" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Raise Complaint" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+@{
+    try
+    {
+        if(TempData["com"]=="1")
+        {
+            <script>
+               swal("Good job!", "You Raised the Complaint!", "success");
+            </script>
+        }
+        
+    }
+    catch
+    {
+        
+    }
+}

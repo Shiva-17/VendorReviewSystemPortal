@@ -1,0 +1,82 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\images\foodie 2 new.jpg" />
+    <None Include="wwwroot\images\foodie1new.jpg" />
+    <None Include="wwwroot\images\foodie3.jpg" />
+    <None Include="wwwroot\images\foodie3new.jpg" />
+    <None Include="wwwroot\images\foodie4.jpg" />
+    <None Include="wwwroot\images\foodie5.jpg" />
+    <None Include="wwwroot\images\foodie6 new.jpg" />
+    <None Include="wwwroot\images\foodienew.jpg" />
+    <None Include="wwwroot\images\lb 1.jpg" />
+    <None Include="wwwroot\images\lb2.jpg" />
+    <None Include="wwwroot\images\lbb5.jpg" />
+    <None Include="wwwroot\images\lbb6.jpg" />
+    <None Include="wwwroot\images\llb.jpg" />
+    <None Include="wwwroot\images\llb2.jpg" />
+    <None Include="wwwroot\images\llb3.jpg" />
+    <None Include="wwwroot\images\llb4.jpg" />
+    <None Include="wwwroot\images\llb5.jpg" />
+    <None Include="wwwroot\images\llb6.jpg" />
+    <None Include="wwwroot\images\llb7.jpg" />
+    <None Include="wwwroot\images\llb8.jpg" />
+    <None Include="wwwroot\images\login4.jpg" />
+    <None Include="wwwroot\images\long background.jpg" />
+    <None Include="wwwroot\images\new.jpg" />
+    <None Include="wwwroot\images\new1.jpg" />
+    <None Include="wwwroot\images\new2.jpg" />
+    <None Include="wwwroot\images\new3.jpg" />
+    <None Include="wwwroot\images\new4.jpg" />
+    <None Include="wwwroot\images\pass2.png" />
+    <None Include="wwwroot\images\passimg1.jpg" />
+    <None Include="wwwroot\images\signup.jpg" />
+    <None Include="wwwroot\images\signup1.jpg" />
+    <None Include="wwwroot\images\signup2.jpg" />
+    <None Include="wwwroot\images\vendor 2.jpg" />
+    <None Include="wwwroot\images\vendor1.jpg" />
+    <None Include="wwwroot\images\vendor3.jpg" />
+    <None Include="wwwroot\images\vendor3new.jpg" />
+    <None Include="wwwroot\images\vendor4.jpg" />
+    <None Include="wwwroot\img 18.jpg" />
+    <None Include="wwwroot\img1.jpg" />
+    <None Include="wwwroot\img11.jpg" />
+    <None Include="wwwroot\img12.jpg" />
+    <None Include="wwwroot\img13.jpg" />
+    <None Include="wwwroot\img14.jpg" />
+    <None Include="wwwroot\img15.jpg" />
+    <None Include="wwwroot\img16.png" />
+    <None Include="wwwroot\img17.png" />
+    <None Include="wwwroot\img2.jpg" />
+    <None Include="wwwroot\img21.png" />
+    <None Include="wwwroot\img3.jpg" />
+    <None Include="wwwroot\img4.jpg" />
+    <None Include="wwwroot\img5.jpg" />
+    <None Include="wwwroot\img20.jpg" />
+    <None Include="wwwroot\images\login3.jpg" />
+    <None Include="wwwroot\imglogin.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.6" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+  </ItemGroup>
+
+</Project>

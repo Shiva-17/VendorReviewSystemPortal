@@ -1,0 +1,84 @@
+﻿@section head{
+    <style type="text/css">
+    body
+    {
+        
+        background-image:url('/images/signup2.jpg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+        margin:auto;
+        
+        
+        
+    }
+    #customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+    
+    </style>
+}
+
+<div class="container">
+    <table class="table table-bordered table-hover" id="customers">
+        <tr class="bg-primay text-dark">
+            <th>FoodieUserID</th>
+            <th>FoodieName</th>
+            <th>VendorUserID</th>
+          <th>VendorName</th>
+          <th>VendorLocation</th>
+          <th>FoodiesReviews</th>
+          <th>FoodieRating</th>
+          <th>Actions</th>
+        </tr>
+        @{
+            try
+            {
+                if(TempData["foodiereview"]!=null)
+                {
+                    foreach(var x in (List<VendorReviewSystemPortal.Models.FoodieReview>)TempData["foodiereview"])
+                    {
+                        <tr>
+                        <td>@x.FoodieUserID</td>
+                        <td>@x.FoodieName</td>
+                        <td>@x.VendorUserID</td>
+                        <td>@x.VendorName</td>
+                        <td>@x.VendorLocation</td>
+                        <td>@x.FoodiesReview</td>
+                        <td>@x.FoodieRating</td>
+                        <td>
+                        <a href="~/FoodieViewRev/edit?Id=@x.FoodieUserID" class="btn btn-warning">Edit</a>
+                        <a href="~/FoodieViewRev/deletefoo?Id=@x.FoodieUserID" class="btn btn-danger" style="margin-left:3%">Delete</a>
+                        
+                        </td>
+                        </tr>
+                    }
+                }
+            }
+            catch
+            {
+
+            }
+        }
+    </table>
+</div>
+

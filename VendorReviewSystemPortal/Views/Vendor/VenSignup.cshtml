@@ -1,0 +1,150 @@
+﻿@model VendorReviewSystemPortal.Models.Vendor
+
+@{
+    ViewData["Title"] = "VenSignup";
+}
+
+
+    <style type="text/css">
+    body
+    {
+        
+        background-image:url('/images/vendor3new.jpg');
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-position:center;
+        margin:auto;
+    
+        
+        
+    }
+    
+    </style>
+
+
+<h1>Vendor Registration</h1>
+
+<h4>The RoleID Given for Vendors is 103</h4>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="VenSignup">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+           
+            <div class="form-group">
+                <label asp-for="RoleID" class="control-label"></label>
+                <input asp-for="RoleID" class="form-control" />
+                <span asp-validation-for="RoleID" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" minlength="3" maxlength="50"/>
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="EmailID" class="control-label"></label>
+                <input asp-for="EmailID" class="form-control" />
+                <span asp-validation-for="EmailID" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="WebsiteID" class="control-label"></label>
+                <input asp-for="WebsiteID" class="form-control" />
+                <span asp-validation-for="WebsiteID" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label asp-for="Location" class="control-label"></label>
+                <input asp-for="Location" class="form-control" />
+                <span asp-validation-for="Location" class="text-danger"></span>
+            </div>
+            <br/>
+            Vendor Type:
+            <select id="Vendor" name="VendorType">
+                  <option value="">---Select---</option>
+                  <option value="ta">Take away</option>
+                  <option value="buff">buffet</option>
+                  <option value="ala">Alacarte</option>
+           </select>
+           <br/>
+           Cusine Type:
+          <select id="cusine" name="cusinetype">
+                 <option value="">---Select---</option>
+                 <option value="nt">North Indian</option>
+                 <option value="st">South Indian</option>
+                 <option value="it">Italian</option>
+                 <option value="ch">Chinese</option>
+                 <option value="mc">Multicusine</option>
+          </select>
+          <br/>
+         <br/>
+
+          Registration Payment:
+          <br/>
+           <input type="radio" name="payment" id="1mon-1000" value="1m-1000"/>1 months-Rs.1000
+           <br/>
+           <input type="radio" name="payment" id="3mon-2000" value="3m-2000"/> 3 months-Rs.2000
+           <br/>
+           <input type="radio" name="payment" id="6mon-5000" value="6m-5000"/> 6 months-Rs.5000
+           <br/>
+           <input type="radio" name="payment" id="12mon-9000" value="12m-9000"/> 12 months-Rs.9000
+           <br/>
+           <br/>
+           <div class="form-group">
+                <input type="submit" value="Add Vendor" class="btn btn-primary" />
+           </div>
+            <br/>
+            <div>
+            <a href="~/Vendor/pay">Pay</a>
+           </div>
+  
+        </form>
+    </div>
+</div>
+
+
+@{
+    try
+    {
+        if(TempData["status"]=="1")
+        {
+            <script>
+               swal("Good job!", "You registered successfully , scroll dowm Do the Payment!", "success");
+            </script>
+        }
+        if(TempData["status"]=="0")
+        {
+            <script>
+               swal("Incorrect Credentials!", "Please try Again!", "Error");
+            </script>
+        }
+    }
+    catch
+    {
+        
+    }
+}
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
